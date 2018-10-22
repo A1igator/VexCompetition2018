@@ -10,14 +10,13 @@ task main()
 {
   while(1 == 1)
   {
-    //Right side of the robot is controlled by the right joystick, Y-axis
-    motor[frontRightMotor] = vexRT[Ch2];
-    motor[middleRightMotor]  = vexRT[Ch2];
-    motor[backRightMotor]  = vexRT[Ch2];
-    //Left side of the robot is controlled by the left joystick, Y-axis
-    motor[frontLeftMotor] = vexRT[Ch3];
-    motor[middleLeftMotor]  = vexRT[Ch3];
-    motor[backLeftMotor]  = vexRT[Ch3];
+    motor[middleLeftMotor]  = vexRT[Ch3] + vexRT[Ch4];
+    motor[frontLeftMotor]  = vexRT[Ch3] + vexRT[Ch4];
+    motor[backLeftMotor]  = vexRT[Ch3] + vexRT[Ch4];
+    motor[middleRightMotor] = vexRT[Ch3] - vexRT[Ch4];
+    motor[backRightMotor] = vexRT[Ch3] - vexRT[Ch4];
+    motor[frontRightMotor] = vexRT[Ch3] - vexRT[Ch4];
+    wait1Msec(10);
   }
 }
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
